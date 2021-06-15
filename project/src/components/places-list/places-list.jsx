@@ -7,13 +7,12 @@ import { nanoid } from 'nanoid';
 function PlacesList(props) {
   const { offers } = props;
   const [selectedOffer, setSelectedOffer] = useState({ idSelected: null });
-  const { idSelected } = selectedOffer;
 
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((place, id) =>
-        <Place key={place.id} offer={place} onMouseOver={() => setSelectedOffer({ ...selectedOffer, idSelected: nanoid() })} />
-      )}
+        <Place key={place.id} offer={place} onMouseOver={() => setSelectedOffer({ ...selectedOffer, idSelected: nanoid() })} />,
+      )},
     </div>
   );
 }

@@ -9,7 +9,7 @@ const offers = [
     isPremium: true,
     isFavorite: true,
     rating: 4.8,
-    city: `Amsterdam`,
+    city: 'Amsterdam',
     placeName: 'Sea castle',
     title: 'Beautiful & luxurious apartment at great location',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam',
@@ -19,24 +19,24 @@ const offers = [
       roommattes: 4,
     },
     images: [
-      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`
+      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`,
     ],
     price: 120,
     accessibilites: [
-      `Wi - Fi`, `Heating`, `Kitchen`, `Fridge`
+      'Wi - Fi', 'Heating', 'Kitchen', 'Fridge',
     ],
     host: {
       id: nanoid(),
       name: 'Angelina',
       avatar: IMG_HOST_URL,
       isPro: true,
-    }
+    },
   }, {
     id: nanoid(),
     isPremium: false,
     isFavorite: true,
     rating: 4.8,
-    city: `Amsterdam`,
+    city: 'Amsterdam',
     placeName: 'Leonardo',
     title: 'Stay in the heart of Amsterdam',
     description: 'Holiday Inn Express Amsterdam - City Hall is in a prime location in the Amsterdam City Centre',
@@ -46,11 +46,11 @@ const offers = [
       roommattes: 5,
     },
     images: [
-      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`
+      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`,
     ],
     price: 100,
     accessibilites: [
-      `Wi - Fi`, `Heating`, `Kitchen`, `Fridge`
+      'Wi - Fi', 'Heating', 'Kitchen', 'Fridge',
     ],
     host: {
       id: nanoid(),
@@ -63,7 +63,7 @@ const offers = [
     isPremium: true,
     isFavorite: false,
     rating: 4.8,
-    city: `Amsterdam`,
+    city: 'Amsterdam',
     placeName: 'Grand Hotel',
     title: 'One of our top picks in Amsterdam',
     description: 'Jaz in the City Amsterdam offers accommodation in the Zuidoost district of Amsterdam',
@@ -73,24 +73,24 @@ const offers = [
       roommattes: 2,
     },
     images: [
-      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`
+      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`,
     ],
     price: 150,
     accessibilites: [
-      `Wi - Fi`, `Heating`, `Kitchen`, `Fridge`
+      'Wi - Fi', 'Heating', 'Kitchen', 'Fridge',
     ],
     host: {
       id: nanoid(),
       name: 'Alisa',
       avatar: IMG_HOST_URL,
       isPro: true,
-    }
+    },
   }, {
     id: nanoid(),
     isPremium: true,
     isFavorite: true,
     rating: 4.8,
-    city: `Cologne`,
+    city: 'Cologne',
     placeName: 'White castle',
     title: 'This is our guests favourite part of Cologne',
     description: 'Situated in Cologne, 600 metres from Anne Frank House, Mr. Jordaan features air-conditioned rooms with free WiFi and express check-in and check-out.',
@@ -100,18 +100,18 @@ const offers = [
       roommattes: 4,
     },
     images: [
-      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`
+      `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`, `${IMG_ROOM_URL}`,
     ],
     price: 90,
     accessibilites: [
-      `Wi - Fi`, `Heating`, `Kitchen`, `Fridge`
+      'Wi - Fi', 'Heating', 'Kitchen', 'Fridge',
     ],
     host: {
       id: nanoid(),
       name: 'Rebekka',
       avatar: IMG_HOST_URL,
       isPro: true,
-    }
+    },
   },
 ];
 

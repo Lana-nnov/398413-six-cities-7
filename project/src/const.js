@@ -6,10 +6,10 @@ export const AppRoute = {
 };
 
 export const CityType = {
-  PARIS: `Paris`,
-  COLOGNE: `Cologne`,
+  PARIS: 'Paris',
+  COLOGNE: 'Cologne',
   BRUSSELS: 'Brussels',
-  AMSTERDAM: `Amsterdam`,
+  AMSTERDAM: 'Amsterdam',
   HUMBURG: 'Humburg',
   DUSSELDORF: 'Dusseldorf',
 };

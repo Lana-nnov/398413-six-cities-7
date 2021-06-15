@@ -11,9 +11,10 @@ function Place(props) {
 
   return (
     <article className="cities__place-card place-card">
-      {isPremium ? <div className="place-card__mark">
-        <span>Premium</span>
-      </div> : ''}
+      {isPremium ?
+        <div className="place-card__mark">
+          <span>Premium</span>
+        </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`}>
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image" />
@@ -33,13 +34,16 @@ function Place(props) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${id}`} 
+          <Link to={`/offer/${id}`}
             onClick={
               (evt) => {
-              evt.preventDefault;
-              history.push();
+                evt.preventDefault;
+                history.push();
               }
-            }>{description}</Link>
+            }
+          >
+            {description}
+          </Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

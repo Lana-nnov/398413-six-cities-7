@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import offerProp from '../../prop-types/offer.prop';
+import reviewProp from '../../prop-types/review.prop';
 import Review from '../review/review';
 import ReviewForm from '../review-form/review-form';
 import { useHistory } from 'react-router-dom';
@@ -48,9 +49,9 @@ function Room(props) {
                 return (
                   <div key={keyValue} className="property__image-wrapper">
                     <img className="property__image" src={elem} alt="Photo studio" />
-                  </div>)
-              })
-              }
+                  </div>);
+              })}
+
               {/*<div className="property__image-wrapper">
                 <img className="property__image" src="img/room.jpg" alt="Photo studio" />
               </div>
@@ -74,7 +75,7 @@ function Room(props) {
           <div className="property__container container">
             <div className="property__wrapper">
               <div className="property__mark">
-                {isPremium ? <span>Premium</span> : ``}
+                {isPremium ? <span>Premium</span> : ''}
               </div>
               <div className="property__name-wrapper">
                 <h1 className="property__name">
@@ -89,7 +90,7 @@ function Room(props) {
               </div>
               <div className="property__rating rating">
                 <div className="property__stars rating__stars">
-                  <span style={{ width: `80%` }}></span>
+                  <span style={{ width: '80%' }}></span>
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="property__rating-value rating__value">{rating}</span>
@@ -117,9 +118,9 @@ function Room(props) {
                     return (
                       <li key={keyValue} className="property__inside-item">
                         {elem}
-                      </li>)
-                  })
-                  }
+                      </li>);
+                  })}
+
                   {/*
                   <li className="property__inside-item">
                     Wi-Fi
@@ -163,7 +164,7 @@ function Room(props) {
                     {name}
                   </span>
                   <span className="property__user-status">
-                    {isPro ? `Pro` : ``}
+                    {isPro ? 'Pro' : ''}
                   </span>
                 </div>
                 <div className="property__description">
@@ -230,7 +231,7 @@ function Room(props) {
                   </div>
                   <div className="place-card__rating rating">
                     <div className="place-card__stars rating__stars">
-                      <span style={{ width: `80%` }}></span>
+                      <span style={{ width: '80%' }}></span>
                       <span className="visually-hidden">Rating</span>
                     </div>
                   </div>
@@ -262,7 +263,7 @@ function Room(props) {
                   </div>
                   <div className="place-card__rating rating">
                     <div className="place-card__stars rating__stars">
-                      <span style={{ width: `80%` }}></span>
+                      <span style={{ width: '80%' }}></span>
                       <span className="visually-hidden">Rating</span>
                     </div>
                   </div>
@@ -294,7 +295,7 @@ function Room(props) {
                   </div>
                   <div className="place-card__rating rating">
                     <div className="place-card__stars rating__stars">
-                      <span style={{ width: `100%` }}></span>
+                      <span style={{ width: '100%' }}></span>
                       <span className="visually-hidden">Rating</span>
                     </div>
                   </div>
@@ -314,6 +315,7 @@ function Room(props) {
 
 Room.propTypes = {
   offers: PropTypes.arrayOf(offerProp).isRequired,
+  reviews: PropTypes.arrayOf(reviewProp).isRequired,
 };
 
 export default Room;
