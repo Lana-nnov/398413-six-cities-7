@@ -33,7 +33,7 @@ function NotFoundPage() {
 
       <main className="page__main page__main--notfound">
         <div className="page__notfound-container container">
-          <section className="notfound" style={{ textAlign: `center` }}>
+          <section className="notfound" style={{ textAlign: 'center' }}>
             <h1>404. Page not found</h1>
             <a href="/">Вернуться на главную</a>
           </section>
