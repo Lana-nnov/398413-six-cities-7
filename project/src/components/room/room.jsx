@@ -3,17 +3,15 @@ import PropTypes from 'prop-types';
 import offerProp from '../../prop-types/offer.prop';
 import reviewProp from '../../prop-types/review.prop';
 import Review from '../review/review';
+import Map from '../map/map';
 import ReviewForm from '../review-form/review-form';
 import { useHistory } from 'react-router-dom';
 
 function Room(props) {
-  const { offers } = props;
+  const { offers, reviews } = props;
   const history = useHistory();
   const offer = offers.find((elem) => elem.id === history.location.pathname.slice(7));
-  const { images, rating, price, title, description, features, accessibilites, host, isPremium } = offer;
-  const { type, bedRooms, roommattes } = features;
-  const { name, avatar, isPro } = host;
-  const { reviews } = props;
+  const { images, rating, price, title, description, features: { type, bedRooms, roommattes }, accessibilites, host: { name, avatar, isPro }, isPremium } = offer;
 
   return (
     <div className="page">
@@ -204,7 +202,9 @@ function Room(props) {
               </section>
             </div>
           </div>
-          <section className="property__map map"></section>
+          <section className="property__map map">
+            <Map offers={offers} />
+          </section>
         </section>
         <div className="container">
           <section className="near-places places">

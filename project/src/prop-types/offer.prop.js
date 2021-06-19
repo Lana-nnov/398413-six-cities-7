@@ -5,6 +5,10 @@ export default PropTypes.shape({
   isPremium: PropTypes.bool.isRequired,
   rating: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    latitude: PropTypes.number.isRequired,
+    longitude: PropTypes.number.isRequired,
+  }).isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   features: PropTypes.shape({

@@ -6,16 +6,19 @@ import { CityType } from '../../const';
 
 function FavoritesList(props) {
   const { offers } = props;
-  const FirstCityFavoriteOffers = [];
-  const SecondCityFavoriteOffers = [];
+  const firstCityFavoriteOffers = offers.filter((elem) => elem.isFavorite && elem.city === CityType.AMSTERDAM);
+  const secondCityFavoriteOffers = offers.filter((elem) => elem.isFavorite && elem.city === CityType.COLOGNE);
+
+  {/*const firstCityFavoriteOffers = [];
+  const secondCityFavoriteOffers = [];
 
   offers.map((elem) => {
     if (elem.isFavorite && elem.city === CityType.AMSTERDAM) {
-      FirstCityFavoriteOffers.push(elem);
+      firstCityFavoriteOffers.push(elem);
     } else if (elem.isFavorite && elem.city === CityType.COLOGNE) {
-      SecondCityFavoriteOffers.push(elem);
+      secondCityFavoriteOffers.push(elem);
     }
-  });
+  });*/}
 
   return (
     <div className="page">
@@ -62,7 +65,7 @@ function FavoritesList(props) {
                 </div>
                 <div className="favorites__places">
                   <div className="cities__places-list places__list tabs__content">
-                    {FirstCityFavoriteOffers.map((place, i) =>
+                    {firstCityFavoriteOffers.map((place, i) =>
                       <Favorite key={place.id} offer={place} />)}
                   </div>
                 </div>
@@ -77,7 +80,7 @@ function FavoritesList(props) {
                   </div>
                 </div>
                 <div className="favorites__places">
-                  {SecondCityFavoriteOffers.map((place, i) =>
+                  {secondCityFavoriteOffers.map((place, i) =>
                     <Favorite key={place.id} offer={place} />)}
                 </div>
               </li>

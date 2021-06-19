@@ -10,6 +10,10 @@ const offers = [
     isFavorite: true,
     rating: 4.8,
     city: 'Amsterdam',
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+    },
     placeName: 'Sea castle',
     title: 'Beautiful & luxurious apartment at great location',
     description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam',
@@ -37,6 +41,10 @@ const offers = [
     isFavorite: true,
     rating: 4.8,
     city: 'Amsterdam',
+    location: {
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
+    },
     placeName: 'Leonardo',
     title: 'Stay in the heart of Amsterdam',
     description: 'Holiday Inn Express Amsterdam - City Hall is in a prime location in the Amsterdam City Centre',
@@ -64,6 +72,10 @@ const offers = [
     isFavorite: false,
     rating: 4.8,
     city: 'Amsterdam',
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+    },
     placeName: 'Grand Hotel',
     title: 'One of our top picks in Amsterdam',
     description: 'Jaz in the City Amsterdam offers accommodation in the Zuidoost district of Amsterdam',
@@ -91,6 +103,10 @@ const offers = [
     isFavorite: true,
     rating: 4.8,
     city: 'Cologne',
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+    },
     placeName: 'White castle',
     title: 'This is our guests favourite part of Cologne',
     description: 'Situated in Cologne, 600 metres from Anne Frank House, Mr. Jordaan features air-conditioned rooms with free WiFi and express check-in and check-out.',

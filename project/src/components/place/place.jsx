@@ -37,7 +37,7 @@ function Place(props) {
           <Link to={`/offer/${id}`}
             onClick={
               (evt) => {
-                evt.preventDefault;
+                evt.preventDefault();
                 history.push();
               }
             }
