@@ -2,12 +2,12 @@ import React from 'react';
 import Favorite from '../favorite/favorite';
 import PropTypes from 'prop-types';
 import offerProp from '../../prop-types/offer.prop';
-import { CityType } from '../../const';
+import { cities } from '../../const';
 
 function FavoritesList(props) {
   const { offers } = props;
-  const firstCityFavoriteOffers = offers.filter((elem) => elem.isFavorite && elem.city === CityType.AMSTERDAM);
-  const secondCityFavoriteOffers = offers.filter((elem) => elem.isFavorite && elem.city === CityType.COLOGNE);
+  const firstCityFavoriteOffers = offers.filter((elem) => elem.isFavorite && elem.city === cities[3].name);
+  const secondCityFavoriteOffers = offers.filter((elem) => elem.isFavorite && elem.city === cities[1].name);
 
   {/*const firstCityFavoriteOffers = [];
   const secondCityFavoriteOffers = [];

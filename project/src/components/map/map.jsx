@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import PropTypes from 'prop-types';
 import offerProp from '../../prop-types/offer.prop';
 
-const CITY = [52.38333, 4.9];
+let CITY = [52.38333, 4.9];
 const ZOOM = 12;
 const ICON = leaflet.icon({
   iconUrl: 'img/pin.svg',
@@ -14,10 +14,16 @@ const ICON = leaflet.icon({
 
 function Map(props) {
   const mapRef = useRef(null);
-  const { offers } = props;
+  const { offers, city } = props;
+  const currentOffers = offers.filter((elem) => elem.city === city);
+
+  if (currentOffers.length > 0) {
+    CITY = [currentOffers[0].location.latitude, currentOffers[0].location.longitude];
+  }
 
   useEffect(() => {
-    const map = leaflet.map('map', {
+
+    const map = leaflet.map(mapRef.current, {
       center: CITY,
       zoom: ZOOM,
       zoomControl: false,
@@ -38,15 +44,20 @@ function Map(props) {
       .marker([elem.location.latitude, elem.location.longitude], { icon: ICON })
       .addTo(map));
 
+    return () => {
+      map.remove();
+    };
+
   }, [offers]);
 
   return (
-    <div ref={mapRef} id="map" style={{ height: '100%' }}></div>
+    <div ref={mapRef} style={{ height: '100%' }}></div>
   );
 }
 
 Map.propTypes = {
   offers: PropTypes.arrayOf(offerProp).isRequired,
+  city: PropTypes.string.isRequired,
 };
 
 export default Map;

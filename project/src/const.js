@@ -5,6 +5,7 @@ export const AppRoute = {
   ROOT: '/',
 };
 
+{/*
 export const CityType = {
   PARIS: 'Paris',
   COLOGNE: 'Cologne',
@@ -12,4 +13,17 @@ export const CityType = {
   AMSTERDAM: 'Amsterdam',
   HUMBURG: 'Humburg',
   DUSSELDORF: 'Dusseldorf',
-};
+};*/}
+
+export const cities = [
+  { name: 'Paris' },
+  { name: 'Cologne' },
+  { name: 'Brussels' },
+  { name: 'Amsterdam' },
+  { name: 'Humburg' },
+  { name: 'Dusseldor' },
+];
+
+
+export const DEFAULT_CITY = 'Amsterdam';
+

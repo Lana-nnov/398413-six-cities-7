@@ -104,8 +104,8 @@ const offers = [
     rating: 4.8,
     city: 'Cologne',
     location: {
-      latitude: 52.3809553943508,
-      longitude: 4.939309666406198,
+      latitude: 50.935173,
+      longitude: 6.953101,
     },
     placeName: 'White castle',
     title: 'This is our guests favourite part of Cologne',
