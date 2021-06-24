@@ -1,10 +1,13 @@
 import { ActionType } from './action';
 import { DEFAULT_CITY } from '../const';
 import offers from '../mocks/offers';
+import reviews from '../mocks/reviews';
 
 const initialState = {
   city: DEFAULT_CITY,
+  offers: offers,
   currentOffers: offers.filter((elem) => elem.city === DEFAULT_CITY),
+  reviews: reviews,
 };
 
 const reducer = (state = initialState, action) => {

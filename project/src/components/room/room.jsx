@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { ActionCreator } from '../../store/action';
 import PropTypes from 'prop-types';
 import offerProp from '../../prop-types/offer.prop';
 import reviewProp from '../../prop-types/review.prop';
@@ -8,9 +10,9 @@ import ReviewForm from '../review-form/review-form';
 import { useHistory } from 'react-router-dom';
 
 function Room(props) {
-  const { offers, reviews } = props;
+  const { currentOffers, reviews, city } = props;
   const history = useHistory();
-  const offer = offers.find((elem) => elem.id === history.location.pathname.slice(7));
+  const offer = currentOffers.find((elem) => elem.id === history.location.pathname.slice(7));
   const { images, rating, price, title, description, features: { type, bedRooms, roommattes }, accessibilites, host: { name, avatar, isPro }, isPremium } = offer;
 
   return (
@@ -203,7 +205,7 @@ function Room(props) {
             </div>
           </div>
           <section className="property__map map">
-            <Map offers={offers} />
+            <Map offers={currentOffers} city={city} />
           </section>
         </section>
         <div className="container">
@@ -314,9 +316,23 @@ function Room(props) {
 }
 
 Room.propTypes = {
-  offers: PropTypes.arrayOf(offerProp).isRequired,
+  currentOffers: PropTypes.arrayOf(offerProp).isRequired,
   reviews: PropTypes.arrayOf(reviewProp).isRequired,
+  city: PropTypes.string.isRequired,
 };
 
-export default Room;
+const mapStateToProps = (state) => ({
+  city: state.city,
+  currentOffers: state.currentOffers,
+  reviews: state.reviews,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeCity(city) {
+    dispatch(ActionCreator.changeCity(city));
+  },
+});
+
+export { Room };
+export default connect(mapStateToProps, mapDispatchToProps)(Room);
 

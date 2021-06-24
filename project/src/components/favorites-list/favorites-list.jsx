@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { ActionCreator } from '../../store/action';
 import Favorite from '../favorite/favorite';
 import PropTypes from 'prop-types';
 import offerProp from '../../prop-types/offer.prop';
@@ -101,4 +103,15 @@ FavoritesList.propTypes = {
   offers: PropTypes.arrayOf(offerProp).isRequired,
 };
 
-export default FavoritesList;
+const mapStateToProps = (state) => ({
+  offers: state.offers,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeCity(city) {
+    dispatch(ActionCreator.changeCity(city));
+  },
+});
+
+export { FavoritesList };
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesList);
