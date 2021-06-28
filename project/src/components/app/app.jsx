@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import MainPage from '../main-page/main-page';
@@ -6,8 +8,17 @@ import Login from '../login/login';
 import FavoritesList from '../favorites-list/favorites-list';
 import Room from '../room/room';
 import NotFoundPage from '../not-found-page/not-found-page';
+import LoadingScreen from '../loading-screen/loading-screen';
 
-function App() {
+function App(props) {
+
+  const { isDataLoaded } = props;
+
+  if (!isDataLoaded) {
+    return (
+      <LoadingScreen />
+    );
+  }
 
   return (
     < BrowserRouter >
@@ -32,4 +43,13 @@ function App() {
   );
 }
 
-export default App;
+App.propTypes = {
+  isDataLoaded: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  isDataLoaded: state.isDataLoaded,
+});
+
+export { App };
+export default connect(mapStateToProps, null)(App);

@@ -10,10 +10,10 @@ import ReviewForm from '../review-form/review-form';
 import { useHistory } from 'react-router-dom';
 
 function Room(props) {
-  const { currentOffers, reviews, city } = props;
+  const { currentOffers, reviews } = props;
   const history = useHistory();
-  const offer = currentOffers.find((elem) => elem.id === history.location.pathname.slice(7));
-  const { images, rating, price, title, description, features: { type, bedRooms, roommattes }, accessibilites, host: { name, avatar, isPro }, isPremium } = offer;
+  const offer = currentOffers.find((elem) => elem.id === +history.location.pathname.slice(7));
+  const { images, rating, price, placeName, description, features: { type, bedRooms, roommattes }, accessibilites, host: { name, avatar, isPro }, isPremium } = offer;
 
   return (
     <div className="page">
@@ -79,7 +79,7 @@ function Room(props) {
               </div>
               <div className="property__name-wrapper">
                 <h1 className="property__name">
-                  {title}
+                  {placeName}
                 </h1>
                 <button className="property__bookmark-button button" type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
@@ -205,7 +205,7 @@ function Room(props) {
             </div>
           </div>
           <section className="property__map map">
-            <Map offers={currentOffers} city={city} />
+            <Map currentOffers={currentOffers} />
           </section>
         </section>
         <div className="container">
@@ -318,7 +318,6 @@ function Room(props) {
 Room.propTypes = {
   currentOffers: PropTypes.arrayOf(offerProp).isRequired,
   reviews: PropTypes.arrayOf(reviewProp).isRequired,
-  city: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -330,6 +329,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeCity(city) {
     dispatch(ActionCreator.changeCity(city));
+  },
+  loadOffers(offers) {
+    dispatch(ActionCreator.loadOffers(offers));
   },
 });
 

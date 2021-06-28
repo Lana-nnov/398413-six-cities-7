@@ -102,7 +102,7 @@ function MainPage(props) {
             </section>
             <div className="cities__right-section">
               <section className="cities__map map">
-                <Map offers={currentOffers} city={city} />
+                <Map currentOffers={currentOffers} city={city} />
               </section>
             </div>
           </div>

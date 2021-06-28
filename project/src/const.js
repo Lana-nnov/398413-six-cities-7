@@ -20,10 +20,21 @@ export const cities = [
   { name: 'Cologne' },
   { name: 'Brussels' },
   { name: 'Amsterdam' },
-  { name: 'Humburg' },
-  { name: 'Dusseldor' },
+  { name: 'Hamburg' },
+  { name: 'Dusseldorf' },
 ];
 
+export const DEFAULT_CITY = 'Paris';
 
-export const DEFAULT_CITY = 'Amsterdam';
+export const AuthorizationStatus = {
+  AUTH: 'AUTH',
+  NO_AUTH: 'NO_AUTH',
+  UNKNOWN: 'UNKNOWN',
+};
+
+export const APIRoute = {
+  OFFERS: '/hotels',
+  LOGIN: '/login',
+  LOGOUT: '/logout',
+};
 

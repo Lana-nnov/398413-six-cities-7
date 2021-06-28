@@ -16,7 +16,13 @@ function Place(props) {
           <span>Premium</span>
         </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`/offer/${id}`}>
+        <Link to={`/offer/${id}`}
+          onClick={
+            () => {
+              history.push();
+            }
+          }
+        >
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image" />
         </Link>
       </div>
@@ -36,8 +42,7 @@ function Place(props) {
         <h2 className="place-card__name">
           <Link to={`/offer/${id}`}
             onClick={
-              (evt) => {
-                evt.preventDefault();
+              () => {
                 history.push();
               }
             }

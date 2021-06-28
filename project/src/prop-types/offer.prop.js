@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export default PropTypes.shape({
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   isPremium: PropTypes.bool.isRequired,
   rating: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
@@ -9,7 +9,6 @@ export default PropTypes.shape({
     latitude: PropTypes.number.isRequired,
     longitude: PropTypes.number.isRequired,
   }).isRequired,
-  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   features: PropTypes.shape({
     type: PropTypes.string.isRequired,
@@ -20,7 +19,7 @@ export default PropTypes.shape({
   price: PropTypes.number.isRequired,
   accessibilites: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   host: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
     isPro: PropTypes.bool.isRequired,

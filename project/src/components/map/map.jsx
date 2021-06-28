@@ -14,11 +14,11 @@ const ICON = leaflet.icon({
 
 function Map(props) {
   const mapRef = useRef(null);
-  const { offers, city } = props;
-  const currentOffers = offers.filter((elem) => elem.city === city);
+  const { currentOffers } = props;
+  {/*const currentOffers = offers.filter((elem) => elem.city === city);*/ }
 
   if (currentOffers.length > 0) {
-    CITY = [currentOffers[0].location.latitude, currentOffers[0].location.longitude];
+    CITY = [currentOffers[0].cityLocation.latitude, currentOffers[0].cityLocation.longitude];
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function Map(props) {
       )
       .addTo(map);
 
-    offers.map((elem) => leaflet
+    currentOffers.map((elem) => leaflet
       .marker([elem.location.latitude, elem.location.longitude], { icon: ICON })
       .addTo(map));
 
@@ -48,7 +48,7 @@ function Map(props) {
       map.remove();
     };
 
-  }, [offers]);
+  }, [currentOffers]);
 
   return (
     <div ref={mapRef} style={{ height: '100%' }}></div>
@@ -56,8 +56,7 @@ function Map(props) {
 }
 
 Map.propTypes = {
-  offers: PropTypes.arrayOf(offerProp).isRequired,
-  city: PropTypes.string.isRequired,
+  currentOffers: PropTypes.arrayOf(offerProp).isRequired,
 };
 
 export default Map;
