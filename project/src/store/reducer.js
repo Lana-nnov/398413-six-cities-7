@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         offers: action.payload,
-        currentOffers: action.payload.filter((elem) => elem.city === DEFAULT_CITY),
+        currentOffers: action.payload.filter((elem) => elem.city === state.city),
         isDataLoaded: true,
       };
     case ActionType.REQUIRED_AUTHORIZATION:

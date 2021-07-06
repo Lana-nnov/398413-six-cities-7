@@ -7,7 +7,6 @@ function Place(props) {
   const { offer } = props;
   const { price, images, isPremium, description, features, id } = offer;
   const { type } = features;
-  const history = useHistory();
 
   return (
     <article className="cities__place-card place-card">
@@ -17,11 +16,7 @@ function Place(props) {
         </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`}
-          onClick={
-            () => {
-              history.push();
-            }
-          }
+
         >
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image" />
         </Link>
@@ -41,11 +36,7 @@ function Place(props) {
         </div>
         <h2 className="place-card__name">
           <Link to={`/offer/${id}`}
-            onClick={
-              () => {
-                history.push();
-              }
-            }
+
           >
             {description}
           </Link>

@@ -1,8 +1,9 @@
 export const ActionType = {
   CHANGE_CITY: 'CHANGE_CITY',
   LOAD_OFFERS: 'LOAD_OFFERS',
-  REQUIRED_AUTHORIZATION: 'user/requiredAuthorization',
-  LOGOUT: 'user/logout',
+  REQUIRED_AUTHORIZATION: 'REQUIRED_AUTHORIZATION',
+  LOGOUT: 'LOGOUT',
+  REDIRECT_TO_ROUTE: 'REDIRECT_TO_ROUTE',
 };
 
 export const ActionCreator = {
@@ -20,5 +21,9 @@ export const ActionCreator = {
   }),
   logout: () => ({
     type: ActionType.LOGOUT,
+  }),
+  redirectToRoute: (url) => ({
+    type: ActionType.REDIRECT_TO_ROUTE,
+    payload: url,
   }),
 };
