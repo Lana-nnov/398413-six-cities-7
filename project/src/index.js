@@ -9,6 +9,7 @@ import App from './components/app/app';
 import { reducer } from './store/reducer';
 import { checkAuth, fetchOffersList } from './store/api-actions';
 import { AuthorizationStatus } from './const';
+import { ActionCreator } from './store/action';
 import { redirect } from './store/middlewares/redirect';
 
 const api = createAPI(

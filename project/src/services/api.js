@@ -9,8 +9,6 @@ const HttpCode = {
 
 const token = localStorage.getItem('token') ?? '';
 
-console.log(token);
-
 export const createAPI = (onUnauthorized) => {
   const api = axios.create({
     baseURL: BACKEND_URL,

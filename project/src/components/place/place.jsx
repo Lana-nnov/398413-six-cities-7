@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import offerProp from '../../prop-types/offer.prop';
-import { useHistory } from 'react-router-dom';
 
 function Place(props) {
   const { offer } = props;
@@ -15,9 +14,7 @@ function Place(props) {
           <span>Premium</span>
         </div> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`/offer/${id}`}
-
-        >
+        <Link to={`/offer/${id}`}>
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image" />
         </Link>
       </div>
@@ -35,9 +32,7 @@ function Place(props) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${id}`}
-
-          >
+          <Link to={`/offer/${id}`}>
             {description}
           </Link>
         </h2>
